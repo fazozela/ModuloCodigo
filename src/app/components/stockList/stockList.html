@@ -1,0 +1,22 @@
+<h1>{{ stockTitle() }}</h1>
+
+<ol>
+  @for(stock of stockList(); track stock.id;){
+  @if(stock.cuantity > 2){
+  <li>
+    {{ stock.name }}
+    -
+    <strong 
+      [class.text-danger]="stock.cuantity < 10" 
+      [class.text-success]="stock.cuantity >= 10">
+      {{ stock.cuantity }}
+    </strong>
+  </li>
+  }
+  @else {
+  <li>
+    <i>Stock menor a 2</i>
+  </li>
+  }
+  }
+</ol>

@@ -1,0 +1,79 @@
+<h1>{{ this.name() | titlecase }}</h1>
+
+<h2>Formularios Reactivos</h2>
+
+<div class="row container">
+  <div class="col">
+    <form autocomplete="off" [formGroup]="myForm">
+
+      <div class="mb-3 row">
+        <label>Producto</label>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre" formControlName="product">
+          <span class=" form-text text-danger">Mensaje de error</span>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label>Cantidad</label>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="Cantidad" formControlName="cuantity">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label>Existencia</label>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="Existencia" formControlName="existance">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{ myForm.valid | json }}</pre>
+
+    <span>Pristine</span>
+    <pre>{{ myForm.pristine | json }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ myForm.touched | json }}</pre>
+
+    <span>Value</span>
+    <pre>{{ myForm.value | json }}</pre>
+  </div>
+
+  <div class="col">
+    <span>Errors product</span>
+    <pre>{{ myForm.controls.product.errors | json }}</pre>
+
+    <span>Errors cuantity</span>
+    <pre>{{ myForm.controls.cuantity.errors | json }}</pre>
+
+    <span>Errors existance</span>
+    <pre>{{ myForm.controls.existance.errors | json }}</pre>
+  </div>
+
+  <div class="col">
+    <span>Value product</span>
+    <pre>{{ myForm.controls.product.value| json }}</pre>
+
+    <span>Value cuantity</span>
+    <pre>{{ myForm.controls.cuantity.value| json }}</pre>
+
+    <span>Value existance</span>
+    <pre>{{ myForm.controls.existance.value| json }}</pre>
+  </div>
+</div>
