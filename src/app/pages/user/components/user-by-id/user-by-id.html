@@ -1,0 +1,70 @@
+<div class="row text-center my-4">
+  <h1>Editar Usuario</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div *ngIf="isLoading" class="text-center my-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="!isLoading">
+        <div class="card-body">
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label for="fullname" class="form-label">Nombre Completo</label>
+              <input type="text" class="form-control" [class.is-invalid]="isFieldInvalid('fullname')" id="fullname"
+                formControlName="fullname" placeholder="Ingrese el nombre completo">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('fullname')">
+                {{ getErrorMessage('fullname') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" [class.is-invalid]="isFieldInvalid('username')" id="username"
+                formControlName="username" placeholder="Ingrese el username">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('username')">
+                {{ getErrorMessage('username') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" [class.is-invalid]="isFieldInvalid('password')" id="password"
+                formControlName="password" placeholder="Ingrese la contraseña">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('password')">
+                {{ getErrorMessage('password') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" [class.is-invalid]="isFieldInvalid('role')" id="role" formControlName="role">
+                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('role')">
+                {{ getErrorMessage('role') }}
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="isSubmitting">
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Actualizando...' : 'Actualizar' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

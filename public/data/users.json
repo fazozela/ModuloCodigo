@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "John Doe",
+      "username": "john.doe",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 2,
+      "fullname": "Jane Smith",
+      "username": "jane.smith",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 3,
+      "fullname": "Mike Johnson",
+      "username": "mike.j",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 4,
+      "fullname": "Sarah Williams",
+      "username": "sarah.w",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 5,
+      "fullname": "David Brown",
+      "username": "david.b",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 6,
+      "fullname": "Lisa Anderson",
+      "username": "lisa.a",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 7,
+      "fullname": "Robert Wilson",
+      "username": "robert.w",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 8,
+      "fullname": "Emily Davis",
+      "username": "emily.d",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 9,
+      "fullname": "Thomas Miller",
+      "username": "thomas.m",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": 10,
+      "fullname": "Jennifer Taylor",
+      "username": "jennifer.t",
+      "password": "password123",
+      "role": "ADMIN"
+    }
+  ]
+}

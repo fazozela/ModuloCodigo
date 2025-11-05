@@ -1,0 +1,17 @@
+<ng-container *ngIf="!authService.currentUserValue">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-container *ngIf="authService.currentUserValue">
+  <div class="row" style="border: 1px solid red;">
+    <p>Topbar</p>
+  </div>
+  <div class="row" style="border: 2px solid green;">
+    <div class="col-2 bg-black" style="height: 100vh;">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-10" style="border: 1px solid black;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-container>
