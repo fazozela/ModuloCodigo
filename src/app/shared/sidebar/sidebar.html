@@ -1,6 +1,19 @@
-<div class="row mx-3 py-2 align-items-center g-2">
-  <a class="btn btn-warning" routerLink="/" routerLinkActive="active">Home</a>
-  <a class="btn btn-warning" routerLink="/stock" routerLinkActive="active">Stock</a>
-  <a class="btn btn-warning" routerLink="/reactive" routerLinkActive="active">Reactive Forms</a>
-  <a class="btn btn-warning" routerLink="/users" routerLinkActive="active">Usuarios</a>
+<div class="row mx-3 py-2 g-2 align-items-center">
+  <ng-container *ngIf="authService.currentUserValue">
+    <a class="btn btn-warning" routerLink="/" routerLinkActive="active">
+      Dashboard
+    </a>
+    <a class="btn btn-warning" routerLink="/stock" routerLinkActive="active">
+      Stock
+    </a>
+    <a class="btn btn-warning" routerLink="/forms" routerLinkActive="active">
+      Forms
+    </a>
+    <a class="btn btn-warning" routerLink="/users" routerLinkActive="active" *ngIf="authService.isAdmin()">
+      Users
+    </a>
+    <button class="btn btn-danger" (click)="authService.logout()">
+      Logout
+    </button>
+  </ng-container>
 </div>
